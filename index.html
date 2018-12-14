@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Shopping Cart</title>
+    </head>
+
+    <body>
+        <h1>Music Shop</h1>
+        <div class="product">
+            <div class="flex-box-product">
+                <div class="product-box" id="ksg">
+                    <h2>{{kName}}</h2>
+                    <img src="ksg.png" alt="KSG Vinyl"/>
+                    <p>{{kDescription}}</p>
+                    <p>Price: ${{kPrice}}</p>
+                    <p>In stock: {{kQuantity}}</p>
+                    <div class="button" v-on:click="addKSG" v-if="kQuantity > 0"><p>Add to Cart</p></div>
+                    <div class="oosButton" v-if="kQuantity == 0"><p>Out of Stock!</p></div>
+                </div>
+
+                <div class="product-box" id="kgatlw">
+                    <h2>{{gName}}</h2>
+                    <img src="gumboot.jpg" alt="Gumboot Digital"/>
+                    <p>{{gDescription}}</p>
+                    <p>Price: ${{gPrice}}</p>
+                    <p>In stock: {{gQuantity}}</p>
+                    <div class="button" v-on:click="addKGATLW" v-if="gQuantity > 0"><p>Add to Cart</p></div>
+                    <div class="oosButton" v-if="gQuantity == 0"><p>Out of Stock!</p></div>
+                </div>
+
+                <div class="product-box" id="lush">
+                    <h2>{{lName}}</h2>
+                    <img src="lush.png" alt="Lush CD"/>
+                    <p>{{lDescription}}</p>
+                    <p>Price: ${{lPrice}}</p>
+                    <p>In stock: {{lQuantity}}</p>
+                    <div class="button" v-on:click="addLUSH" v-if="lQuantity > 0"><p>Add to Cart</p></div>
+                    <div class="oosButton" v-if="lQuantity == 0"><p>Out of Stock!</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="shoppingCart">
+            <div id="shoppingCartItems" v-if="numItems > 0">
+                <table>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Remove from Cart</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr v-for="item in items">
+                        <th>{{item.name}}</th>
+                        <th>${{item.price}}</th>
+                        <th>{{item.quantity}}</th>
+                        <th>${{item.subtotal}}</th>
+                        <th v-on:click="removeItem(item)"><img src="x.png" alt="x icon"></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>${{total}}</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+.product{
+  text-align: center;
+  margin-right: 70px;
+  margin-left: 70px;
+}
+
+.flex-box-product{
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+}
+
+#shoppingCart {
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#cart {
+  border-top: 3px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even){
+  background-color: #f2f2f2
+}
+
+#name {
+  margin-right: 5px;
+  padding-right: 50px
+}
+
+.product-box{
+  flex:1;
+  background-color: rgb(231, 231, 231);
+  max-width:33%;
+  min-width: 235px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.button{
+  min-width:15%;
+  max-width:40%;
+  margin:auto;
+  text-decoration: none;
+  text-align: center;
+  display:block;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #3d83f4;
+  margin-bottom: 10px;
+}
+
+.button > p {
+  padding: 5px;
+}
+
+.oosButton > p {
+  padding: 5px;
+}
+
+.oosButton{
+  min-width:15%;
+  max-width:40%;
+  margin:auto;
+  text-decoration: none;
+  text-align: center;
+  display:block;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #6da5ff;
+  margin-bottom: 10px;
+}
+
+.button:hover {
+    background-color: #276cdb;
+}
+
+.product-box > img{
+  max-width:60%;
+  max-height: 300px;
+}
